@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import time
 
 def name_scene():
@@ -77,3 +78,9 @@ def scene_2023(user_name):
     print("_____________________________________________________________________________________")
 
 name_scene()
+=======
+print("hello world")
+print("test")
+print("안녕하세요?")
+print("노트북 테스트")
+>>>>>>> c80300dccb21a9254e7453c889d1a7302b75a734
