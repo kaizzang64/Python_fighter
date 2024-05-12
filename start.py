@@ -6,6 +6,7 @@ def name_scene():
     name_window.title("게임 시작")
     name_window.geometry("300x150")
 
+
     def start_game():
         name_window.destroy()
         prologuescene(user_name_entry.get())
