@@ -1,34 +1,33 @@
 import time
-import tkinter as tk
 
 def name_scene():
-    name_window = tk.Tk()
-    name_window.title("게임 시작")
-    name_window.geometry("300x150")
+    print()
+    print("___________________________________________________________")
+    print("                                                           ")
+    print("                                                           ")
+    print("                                                           ")
+    prompt = "당신의 이름을 입력하세요 : "
+    for char in prompt:
+        print(char, end='', flush=True)
+        time.sleep(0.09)
+        
+    user_name=input("")
+    print()
+    print("                                                           ")
+    print("                                                           ")
+    print("                                                           ")
+    print("___________________________________________________________")
 
+<<<<<<< HEAD
 
     def start_game():
         name_window.destroy()
         prologuescene(user_name_entry.get())
+=======
+    scene_2022(user_name)
+>>>>>>> parent of d4ee644 (GUI 구현)
 
-    def exit_game():
-        name_window.destroy()
-    
-    user_name_label = tk.Label(name_window, text="당신의 이름을 입력하세요:")
-    user_name_label.pack()
-
-    user_name_entry = tk.Entry(name_window)
-    user_name_entry.pack()
-
-    start_button = tk.Button(name_window, text="게임 시작", command=start_game)
-    start_button.pack()
-
-    exit_button = tk.Button(name_window, text="종료", command=exit_game)
-    exit_button.pack()
-
-    name_window.mainloop()
-
-def prologuescene(user_name):
+def scene_2022(user_name):
     print("_____________________________________________________________________________________")
     print("")
     print("")
@@ -50,6 +49,17 @@ def prologuescene(user_name):
     print("세계 각국의 외교관들은 전세계에서의 확전을 두려워 하고 있습니다. ")
     time.sleep(0.75)
     print("")
+    time.sleep(0.75)
+    print(f"{user_name} : 재미난 시대로군 ")
+    time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+
+    scene_2023(user_name)
+
+def scene_2023(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
+    print("")
     print("")
     print("2023년 2월 9일 뉴스")
     time.sleep(0.75)
@@ -67,6 +77,13 @@ def prologuescene(user_name):
     time.sleep(0.75)
     print("러시아 쇼이구 국방장관은, \"더이상 이들을 지구상에 남겨두지 않을것\"이라는 기자회견을 했습니다.")
     time.sleep(0.75)
+    print("")
+    time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+    scene_2024_1(user_name)
+
+def scene_2024_1(user_name):
+    print("_____________________________________________________________________________________")
     print("")
     print("")
     print("")
@@ -92,6 +109,12 @@ def prologuescene(user_name):
     time.sleep(0.75)
     print("이라며 강한 대만 수호 의지를 나타냈습니다.")
     time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+    scene_2024_2(user_name)
+
+def scene_2024_2(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2024년 6월 17일 뉴스")
@@ -111,15 +134,21 @@ def prologuescene(user_name):
     print("중국-대만 해상국경에 중국 함대가 자리를 잡았고, 인근 해역을 지나는 모든 상선은 항로를 변경했습니다.")
     print("")
     time.sleep(0.75)
-    print("\"박하늘 대위 입니다. 대통령실에서 해외 파병을 준비하라는 지시입니다!\"")
+    print("\"사령관님! 대통령실에서 해외 파병을 준비하라는 지시입니다!\"")
     print("")
     time.sleep(0.75)
     print("\"해병대 0.75사단, 육군 수기사단, 저희 0.75함대가 파병부대로 선정되었습니다!\"")
     time.sleep(0.75)
     print("")
     time.sleep(0.75)
-    print(f"{user_name} : 알겠다. 총원 작전 준비! ")
+    print(f"{user_name} : 우린 자유의 편에 설것이다. ")
     time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+    scene_2024_3(user_name)
+
+def scene_2024_3(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2024년 6월 30일")
@@ -142,12 +171,19 @@ def prologuescene(user_name):
     print("(무선 잡음).................(폭발음이 들린다.))")
     print("")
     time.sleep(0.75)
-    print("손원일함 오정훈 대령입니다!")
+    print("해병대 사령관 오정훈 중장입니다!")
     time.sleep(0.75)
     print("")
     time.sleep(0.75)
-    print(f"{user_name} : 오정훈 대령. 전투를 준비하게 하지만 아주 힘든 전투가 될거야! ")
+    print(f"{user_name} : 우선 당면한 전투를 치르게. 아주 어려운 싸움이 될거야. ")
     time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+    scene_2024_4(user_name)
+
+def scene_2024_4(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
+    print("")
     print("")
     print("2024년 7월 2일")
     time.sleep(0.75)
@@ -155,7 +191,7 @@ def prologuescene(user_name):
     time.sleep(0.75)
     print("")                                    
     time.sleep(0.75)
-    print("오정훈 대령 : 지금 대통령실은 난리가 났습니다.. 본국으로 퇴각하라는 지시입니다.")
+    print("오정훈 중장 : 지금 대통령실은 난리가 났습니다.. 본국으로 퇴각하라는 지시입니다.")
     time.sleep(0.75)
     print("")
     time.sleep(0.75)
@@ -163,14 +199,20 @@ def prologuescene(user_name):
     time.sleep(0.75)
     print("")
     time.sleep(0.75)
-    print("오정훈 대령 : 저희만 그런것이 아닙니다. 미국 함대와 자위대도 박살이 났습니다.")
+    print("오정훈 중장 : 저희만 그런것이 아닙니다. 미국 함대와 자위대도 박살이 났습니다.")
     print("")
     time.sleep(0.75)
-    print("너무 많은 인명이 하루아침에 희생됐다는 여론이 형성되며 엄청난수의 반전 시위대가 광화문을 뒤덮었다.")
+    print("너무 많은 인명이 아무것도 아닌일에 희생됐다는 여론이 형성되며 엄청난수의 시위대가 광화문을 뒤덮었다.")
     print("")
     time.sleep(0.75)
-    print("시위대는 더이상 해외에 개입하지 않을 것을 요구하고 있습니다.")
+    print("시위대는 더이상 해외 상황에 개입하지 않을 것을 요구하고 있습니다.")
     time.sleep(0.75)
+    print("")
+    print("_____________________________________________________________________________________")
+    scene_2025(user_name)
+
+def scene_2025(user_name):
+    print("_____________________________________________________________________________________")
     print("")
     print("")
     print("")
@@ -190,6 +232,15 @@ def prologuescene(user_name):
     time.sleep(0.75)
     print("독일을 비롯한 유럽 국가는 내년부터 징병제를 실시하고 국방 예산을 대폭 증대한다고 발표 했습니다.")
     print("")
+    time.sleep(0.75)
+    print(f"{user_name} : 세계의 종말이 다가오는군.")
+    print("")
+    print("_____________________________________________________________________________________")
+    scene_2026(user_name)
+
+def scene_2026(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2026년 1월 9일 뉴스")
@@ -205,6 +256,14 @@ def prologuescene(user_name):
     print("미국이 없는 서방세계의 힘은 미미한 상태 입니다.")
     time.sleep(0.75)
     print("")
+    time.sleep(0.75)
+    print(f"{user_name} : 민주주의가 다시한번 승리할수 있을까?....")
+    print("")
+    print("_____________________________________________________________________________________")
+    scene_2027(user_name)
+def scene_2027(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2027년 9월 1일 뉴스")
@@ -219,6 +278,14 @@ def prologuescene(user_name):
     time.sleep(0.75)
     print("최근 여론조사에 따르면 핵무장에 찬성하는 여론이 압도적으로 높았습니다.")
     time.sleep(0.75)
+    print("")
+    time.sleep(0.75)
+    print(f"{user_name} : 평화를 위한다면 언제나 전쟁을 준비 해야한다.")
+    print("")
+    print("_____________________________________________________________________________________")
+    scene_2028(user_name)
+def scene_2028(user_name):
+    print("_____________________________________________________________________________________")
     print("")
     print("")
     print("")
@@ -238,6 +305,15 @@ def prologuescene(user_name):
     print("")
     time.sleep(0.75)
     print("항공모함 건조는 절차를 가속하여 빠르면 올해 말 실전 배치에 투입할 예정입니다.")
+    print("")
+    time.sleep(0.75)
+    print(f"{user_name} : 그들이 어떻게 반응하는지 보자.")
+    print("")
+    print("_____________________________________________________________________________________")
+    scene_2029(user_name)
+
+def scene_2029(user_name):
+    print("_____________________________________________________________________________________")
     print("")
     print("")
     print("")
@@ -270,6 +346,12 @@ def prologuescene(user_name):
     print(f"{user_name} : 알겠네!")
     print("")
     time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+    scene_2030_1(user_name)
+
+def scene_2030_1(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2030년 3월 1일 D+380일째")
@@ -299,6 +381,12 @@ def prologuescene(user_name):
     print("\"...교신이 끊겼다. 계속 연락을 시도해보지.\"")
     print("")
     time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+    scene_2030_2(user_name)
+
+def scene_2030_2(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2030년 3월 6일 D+411일째")
@@ -310,6 +398,12 @@ def prologuescene(user_name):
     time.sleep(0.75)
     print("\"현재 육군본부 30km 앞까지 진격해 왔다고 하네. 행운을 비네! 안수형 소령.\"")
     time.sleep(0.75)
+    print("_____________________________________________________________________________________")
+    scene_2030_3(user_name)
+
+def scene_2030_3(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2030년 5월 23일 D+411일째")
@@ -330,6 +424,12 @@ def prologuescene(user_name):
     print("") 
     time.sleep(0.75)
     print(f"가까스로 탈출한 항공모함 \"상명함\"은 대한민국 최후의 영토 제주도로 출발한다")
+    print("_____________________________________________________________________________________")
+    scene_2031(user_name)
+
+def scene_2031(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2031년 5월 6일")
@@ -356,6 +456,12 @@ def prologuescene(user_name):
     print("") 
     time.sleep(0.75)
     print(f"{user_name}은 과연 이 결심을 현실로 이루어 낼수 있을것인가?")
+    print("_____________________________________________________________________________________")
+    scene_2032(user_name)
+
+def scene_2032(user_name):
+    print("_____________________________________________________________________________________")
+    print("")
     print("")
     print("")
     print("2032년 1월 1일")
