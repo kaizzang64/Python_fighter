@@ -29,8 +29,8 @@ def name_scene():
 
 # 프롤로그 장면을 생성하는 함수
 def prologue_scene(user_name):
-    prologue_text = """
-    프롤로그 1 텍스트 화면
+    prologue_text = f"""
+    프롤로그 텍스트 화면{user_name}
     """
 
     # Tkinter 윈도우 생성
@@ -38,7 +38,7 @@ def prologue_scene(user_name):
     prologue_window.title("프롤로그")  # 윈도우 제목 설정
     prologue_window.geometry("1280x720")  # 윈도우 크기 설정
 
-    text_widget = tk.Text(prologue_window, height=1024, width=576)  # 텍스트 위젯 생성
+    text_widget = tk.Text(prologue_window, height=50, width=100)  # 텍스트 위젯 생성
     text_widget.pack()
 
     # 텍스트를 한 글자씩 출력하는 함수
@@ -49,13 +49,13 @@ def prologue_scene(user_name):
             prologue_window.after(10, print_text, index)  # 10밀리초 후에 다음 글자 출력
         else:
             next_button = tk.Button(prologue_window, text="다음", command=lambda: [prologue_window.destroy(), prologue_scene_2(user_name)], width=20, height=5)
-            next_button.pack()
+            next_button.pack(side=tk.BOTTOM)  # 버튼을 윈도우의 아래쪽에 배치
 
     print_text()  # 텍스트 출력 함수 호출
 
 def prologue_scene_2(user_name):
-    prologue_text_2 = """
-    프롤로그 2 텍스트 화면
+    prologue_text_2 = f"""
+    프롤로그 2 텍스트 화면{user_name}
     """
 
     # Tkinter 윈도우 생성
@@ -63,7 +63,7 @@ def prologue_scene_2(user_name):
     prologue_window_2.title("프롤로그 2")  # 윈도우 제목 설정
     prologue_window_2.geometry("1280x720")  # 윈도우 크기 설정
 
-    text_widget_2 = tk.Text(prologue_window_2, height=1024, width=576)  # 텍스트 위젯 생성
+    text_widget_2 = tk.Text(prologue_window_2, height=50, width=100)  # 텍스트 위젯 생성
     text_widget_2.pack()
 
     # 텍스트를 한 글자씩 출력하는 함수
@@ -74,14 +74,14 @@ def prologue_scene_2(user_name):
             prologue_window_2.after(10, print_text_2, index)  # 10밀리초 후에 다음 글자 출력
         else:
             next_button_2 = tk.Button(prologue_window_2, text="다음", command=lambda: prologue_scene_3(user_name), width=20, height=5)
-            next_button_2.pack()
+            next_button_2.pack(side=tk.BOTTOM)  # 버튼을 윈도우의 아래쪽에 배치
 
     print_text_2()  # 텍스트 출력 함수 호출
 
 # 프롤로그 3 장면을 생성하는 함수
 def prologue_scene_3(user_name):
-    prologue_text_3 = """
-    프롤로그 3 텍스트 화면
+    prologue_text_3 = f"""
+    프롤로그 3 텍스트 화면{user_name}
     """
 
     # Tkinter 윈도우 생성
@@ -89,7 +89,7 @@ def prologue_scene_3(user_name):
     prologue_window_3.title("프롤로그 3")  # 윈도우 제목 설정
     prologue_window_3.geometry("1280x720")  # 윈도우 크기 설정
 
-    text_widget_3 = tk.Text(prologue_window_3, height=1024, width=576)  # 텍스트 위젯 생성
+    text_widget_3 = tk.Text(prologue_window_3, height=50, width=100)  # 텍스트 위젯 생성
     text_widget_3.pack()
 
     # 텍스트를 한 글자씩 출력하는 함수
@@ -106,8 +106,8 @@ def prologue_scene_3(user_name):
 
 # 프롤로그 4 장면을 생성하는 함수
 def prologue_scene_4(user_name):
-    prologue_text_4 = """
-    프롤로그 4 텍스트 화면
+    prologue_text_4 = f"""
+    프롤로그 4 텍스트 화면{user_name}
     """
 
     # Tkinter 윈도우 생성
@@ -115,7 +115,7 @@ def prologue_scene_4(user_name):
     prologue_window_4.title("프롤로그 4")  # 윈도우 제목 설정
     prologue_window_4.geometry("1280x720")  # 윈도우 크기 설정
 
-    text_widget_4 = tk.Text(prologue_window_4, height=1024, width=576)  # 텍스트 위젯 생성
+    text_widget_4 = tk.Text(prologue_window_4, height=50, width=100)  # 텍스트 위젯 생성
     text_widget_4.pack()
 
     # 텍스트를 한 글자씩 출력하는 함수
