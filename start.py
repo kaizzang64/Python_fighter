@@ -80,19 +80,11 @@ def prologue_scene(user_name):
         next_button.pack(side=tk.BOTTOM)  # 버튼을 윈도우의 아래쪽에 배치
 
 # 메인 함수
-# 이미지를 Tkinter에서 사용하기 위한 모듈 임포트
 def main():
-    # 메인 윈도우 생성
-    main_window = tk.Tk()
-    main_window.title("메인 화면")
-    main_window.geometry("1280x720")
-
-    # 배경 이미지
-    bg_image = tk.PhotoImage(file="main_background.png")  # 배경 이미지로 사용할 PNG 파일을 지정합니다.
-
-    # 배경 이미지를 표시할 라벨 생성
-    bg_label = tk.Label(main_window, image=bg_image)
-    bg_label.place(relwidth=1, relheight=1)  # 배경 이미지를 전체 윈도우에 맞게 배치합니다.
+    # Tkinter 윈도우 생성
+    main_window = tk.Toplevel()  # 이전 윈도우에서 메인 창으로 변경
+    main_window.title("메인 화면")  # 윈도우 제목 설정
+    main_window.geometry("1280x720")  # 윈도우 크기 설정
 
     # 세금 징수 버튼 생성
     tax_button = tk.Button(main_window, text="세금 징수", command=collect_tax)
@@ -114,8 +106,23 @@ def main():
     battle_button = tk.Button(main_window, text="전투 준비", command=prepare_for_battle)
     battle_button.pack()
 
-    main_window.mainloop()
+    main_window.mainloop()  # Tkinter 이벤트 루프 시작
 
+# 각 기능에 대한 함수 정의
+def collect_tax():
+    print("세금을 징수합니다.")
+
+def develop_military():
+    print("군사력을 개발합니다.")
+
+def conduct_research():
+    print("연구를 진행합니다.")
+
+def develop_facility():
+    print("시설을 개발합니다.")
+
+def prepare_for_battle():
+    print("전투 준비를 합니다.")
 
 
 name_scene()  # 이름 입력 화면 표시
