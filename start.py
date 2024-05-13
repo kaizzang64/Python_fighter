@@ -1,14 +1,11 @@
-import tkinter as tk  # tkinter 모듈을 tk로 임포트
-import time  # time 모듈 임포트
-import tkinter.filedialog  # tkinter.filedialog 모듈 임포트
-import os
+import tkinter as tk
 
 # 이름 입력 화면을 생성하는 함수
 def name_scene():
     # Tkinter 윈도우 생성
     name_window = tk.Tk()
     name_window.title("게임 시작")  # 윈도우 제목 설정
-    name_window.geometry("1600x900")  # 윈도우 크기 설정
+    name_window.geometry("1280x720")  # 윈도우 크기 설정
 
     # 게임 시작 버튼을 누를 때 호출되는 함수
     def start_game():
@@ -25,7 +22,7 @@ def name_scene():
     user_name_entry.pack()
 
     # 게임 시작 버튼 생성
-    start_button = tk.Button(name_window, text="게임 시작", command=start_game)
+    start_button = tk.Button(name_window, text="게임 시작", command=start_game, width=20, height=5)
     start_button.pack()
 
     name_window.mainloop()  # Tkinter 이벤트 루프 시작
@@ -33,211 +30,15 @@ def name_scene():
 # 프롤로그 장면을 생성하는 함수
 def prologue_scene(user_name):
     prologue_text = """
-    2022년 3월 3일 뉴스\n블라디미르 푸틴 서기장이 지난 2월 24일 11시 50분경 우크라이나 지역에 \'특별 군사 작전\'을 시행 했습니다.
-    키이우 북쪽에서 전략 거점에서 우크라이나군과 러시아군의 교전이 일어났고,
-    어제부로 러시아 군이 확실한 우위를 점하고 끝났습니다. 현재 키이우는 러시아군의 통제하에 있습니다.
-    2023년 2월 9일 뉴스
-    모스크바에서 우크라이나의 미래를 논의하기 위한 회담이 진행되었습니다.
-                                        
-    우크라이나 지역을 러시아로 합병 시키기 위한 주민 투표가 시행되었습니다.
-    
-    우크라이나 저항군들은 그들의 절망적인 상황에도 불구하고, 그들의 영토를 포기하길 거부하고 있습니다.
-    
-    러시아 쇼이구 국방장관은, \"더이상 이들을 지구상에 남겨두지 않을것\"이라는 기자회견을 했습니다.
-    
-    
-    
-    2024년 6월 15일 뉴스
-    중국은 대만의 독립 선언에 분개하여 하늘아래 두 정부는 있을수 없다는 사실을 공표했습니다.
-                                        
-    중국 외교부는 \"대만은 중국의 합법적인 영토이며 대만의 독립시도는 명박한 주권 침해\" 라고 .
-    
-    이제 중국은 대만섬이 24시간 내에 독립 선언을 철회하고 국가 지도부 사퇴를 요구하고 있으며,
-    
-    이를 따르지 않을 경우 힘든 대가를 치르게 할것 이라고 했습니다.
-    
-    미국 외교부 대변인은.\"세계 민주주의와 자유를 보존하는 것은 우리의 역할\"
-    
-    이라며 강한 대만 수호 의지를 나타냈습니다.
-    
-    
-    2024년 6월 17일 뉴스
-    중국은 전쟁 준비로 진먼섬 인근에 군대를 배치했습니다.
-                                        
-    대만 위기를 평화적으로 협상해 끝내고자 베이징에서 중국, 미국, 대만간의 회담이 열렸습니다.
-    
-    긴 회담 끝에 회담은 결렬되었습니다.
-    
-    중국-대만 해상국경에 중국 함대가 자리를 잡았고, 인근 해역을 지나는 모든 상선은 항로를 변경했습니다.
-    
-    \"박하늘 대위 입니다. 대통령실에서 해외 파병을 준비하라는 지시입니다!\"
-    
-    \"해병대 0.75사단, 육군 수기사단, 저희 0.75함대가 파병부대로 선정되었습니다!\"
-    
-    \"알겠다. 총원 작전 준비!\"
-    
-    
-    2024년 6월 30일
-    ROKN 독도함에서 사령부에게 전달! 우린 공격을 받고있다!
-                                        
-    어제부터 본함을 추적하고 있던 미확인 잠수함의 공격으로 보이는 어뢰에 피격된것으로 보인다!
-    
-    중국 해군 함정들이 본 함으로 항주해오고 있다! 기관부가 피격당해서 전투를 회피할수 없다!
-    
-    제발 저들을 어떻게든지 못오게 해주십시오!........제발!
-    
-    (무선 잡음).................(폭발음이 들린다.))
-    
-    손원일함 오정훈 대령입니다!
-    
-    \"오정훈 대령. 전투를 준비하게 하지만 아주 힘든 전투가 될거야!\"
-    
-    2024년 7월 2일
-    전투 보고 드리겠습니다.... 파병부대 22척중 5척 침몰, 7척 중파, 2척 반파.... 본함도 반파 상태입니다..
-                                        
-    오정훈 대령 : 지금 대통령실은 난리가 났습니다.. 본국으로 퇴각하라는 지시입니다.
-    
-    \"우리에게 선전포고도 없이 왜 공격한것이지? 
-    
-    오정훈 대령 : 저희만 그런것이 아닙니다. 미국 함대와 자위대도 박살이 났습니다.
-    
-    너무 많은 인명이 하루아침에 희생됐다는 여론이 형성되며 엄청난수의 반전 시위대가 광화문을 뒤덮었다.
-    
-    시위대는 더이상 해외에 개입하지 않을 것을 요구하고 있습니다.
-    
-    
-    
-    2025년 4월 4일 뉴스
-    영국, 호주, 캐나다, 뉴질랜드 등 파이브 아이즈 국가들이 NATO 탈퇴를 선언했습니다.
-                                        
-    최근 몇년간 미국의 힘이 시들어져감에 따라서 미국 중심의 세계는 더이상 지속될수 없다고 했습니다.
-    
-    추가적으로 유럽내 NATO 회원국도 탈퇴를 고려중입니다.
-    
-    독일을 비롯한 유럽 국가는 내년부터 징병제를 실시하고 국방 예산을 대폭 증대한다고 발표 했습니다.
-    
-    
-    
-    2026년 1월 9일 뉴스
-    한때 같은 적을 두고 승리한 두 국가, 중국과 러시아에 새로운 군사 동맹이 체결되었습니다.
-                                        
-    이런 성장을 맞받아 치기 위해, 마지막 남은 서방세계 국가들이 힘을 합쳐야 하지만
-    
-    미국이 없는 서방세계의 힘은 미미한 상태 입니다.
-    
-    
-    
-    2027년 9월 1일 뉴스
-    오늘 대통령실은 \"민주주의의 최전선에 있는 국가로써 핵개발과 항공모함 건조를 시작하겠다.\"라고 발표 했습니다.
-                                        
-    새로운 국방력 증대 계획은 2029년까지 완료될 계획입니다.
-    
-    최근 여론조사에 따르면 핵무장에 찬성하는 여론이 압도적으로 높았습니다.
-    
-    
-    
-    2028년 2월 17일 뉴스
-    
-    중국과 러시아로 구성된 국가동맹에 북한이 가입했다는 소식입니다.
-                                        
-    새로운 아시아 동맹에 대한 증표로써 \'대가\'를 증정 했는지 의혹에 쌓여 있습니다.
-    
-    최근 비무장지대 근처에 물자와 인력 이동이 다수 포착되었습니다. 군은 항상 고도의 경계 상태를 유지 중입니다.
-    
-    항공모함 건조는 절차를 가속하여 빠르면 올해 말 실전 배치에 투입할 예정입니다.
-    
-    
-    
-    2029년 2월 15일 D-DAY
-    
-    \"16수색의 민경록 소령입니다. 위성상으로 북괴군 이동을 포착했다지만 비무장지대에서 보기엔 특별한 사항은 없습니다!\"
-                                        
-    \"소령, 거짓말 하진 않겠네. 북한군이 작전을 개시했어. 당신 부대는 생존 확률이 매우 희박하네,\"
-    
-    \"그래도 방어 태세를 유지하게, 우리가 반격하는데 필요한 시간을 벌어줄거야\"
-    
-    \"대규모 증원 병력이 올때까지 시간을 버는게 주요 임무일세\"
-    
-    
-    
-    
-    
-    
-    \"차준영 대위 입니다. 사령관님 동해로 초계 작전이 할당되었습니다.\"
-    
-    \"알겠네!
-    
-    
-    
-    2030년 3월 1일 D+380일째
-    
-    양측 모두 큰 사상자를 냈지만 끝내, 마지막 방어선이 무너졌다.
-                                        
-    \"미안하지만... 사령부와 연락이 안된다. 전선과의 통신망이 모두 끊겼어.\"
-    
-    \"아.... 잠깐... 61연대의 초소와 연락이 된것같다.. 지금 연결해주지. \"
-    
-    \"제 61연대, 일병 박조하 입니다... 여긴 완전히 당했습니다. \"
-    
-    \"놈들이 포로를 잡을 생각도 하지 않고 그쪽으로 냅다 진격하고 있습니다!\"
-    
-    \"방금 저희 사단 본부가 통째로 날아갔습니다. 이제 저희 병력도 얼마 남지 않았습니다...\"
-    
-    \"...교신이 끊겼다. 계속 연락을 시도해보지.\"
-    
-    
-    
-    2030년 3월 6일 D+411일째
-    
-    \"방금 미군 본부와 연락이 됐다. 3일안에 미군이 우리를 도와주러 온다는군\"
-                                        
-    \"현재 육군본부 30km 앞까지 진격해 왔다고 하네. 행운을 비네! 안수형 소령.\"
-    
-    
-    2030년 5월 23일 D+411일째
-    
-    미군의 인천 상륙작전은 또 다시 큰 사상자를 내며 처참히 실패했다.
-                                        
-    또한, 대통령을 비롯한 정부 인사들은 미사일 공격을 받고 벙커와 함께 소멸한다.
-     
-     북한군은 이 기세에 힘입어 부대를 재정비해 부산에 총 공세를 가했고
-     
-    전세계 전쟁사에 길이남을 치열한 공방전 끝에 부산은 함락된다.
-    가까스로 탈출한 항공모함 \"상명함\"은 대한민국 최후의 영토 제주도로 출발한다
-    
-    
-    2031년 5월 6일
-    \"아 통영마저 북괴놈들에게 빼앗겼단 말인가...\"
-                                        
-    오정훈 중장 : 이제 통영마저 뚫렸으니 바로 이곳으로 쳐들어 올것입니다. 어서 대책을 세워야 합니다!
-     
-    오정훈 중장의 신들린 전술로 북한의 제주도 상륙을 막는데 가까스로 성공했지만
-     
-    제주도는 잿더미가 되어 군사적, 경제적 손실이 엄청났다.
-     
-    \"대한민국의 비상 행정부 수장은 기필코 북한에게 이 일을 복수하겠다고 다짐하고,
-     
-    언젠가는 자신이 꼭 한반도를 되찾겠다고 결심한다.
-     과연 이 결심을 현실로 이루어 낼수 있을것인가?
-    
-    
-    2032년 1월 1일
-    
-    한반도가 공산화 된지 6개월이 넘었지만 북한은 여전히 전국에서 각지에서 일어나는 시위, 테러를 진압하지 못하고 있다.
-                                        
-    중국과 러시아는 진작 유럽으로 눈을 돌린 상태이고, 잿더미가 된 남한 지역을 재건하려면,
-                                        
-    북한 자체 역량으로 족히 어림잡아 수십년은 걸릴것이다.
-     Hong은 지금이 한반도를 재통일할 기회라고 생각하여
-     \"한반도 재 수복 작전\"을 계획한다.
+    프롤로그 1 텍스트 화면
     """
 
     # Tkinter 윈도우 생성
     prologue_window = tk.Toplevel()
     prologue_window.title("프롤로그")  # 윈도우 제목 설정
-    prologue_window.geometry("1600x900")  # 윈도우 크기 설정
+    prologue_window.geometry("1280x720")  # 윈도우 크기 설정
 
-    text_widget = tk.Text(prologue_window, height=1500, width=500)  # 텍스트 위젯 생성
+    text_widget = tk.Text(prologue_window, height=1024, width=576)  # 텍스트 위젯 생성
     text_widget.pack()
 
     # 텍스트를 한 글자씩 출력하는 함수
@@ -247,12 +48,134 @@ def prologue_scene(user_name):
             index += 1
             prologue_window.after(10, print_text, index)  # 10밀리초 후에 다음 글자 출력
         else:
-            start_main_button = tk.Button(prologue_window, text="메인 게임 시작", command=prologue_window.destroy)
-            start_main_button.pack()
+            next_button = tk.Button(prologue_window, text="다음", command=lambda: [prologue_window.destroy(), prologue_scene_2(user_name)], width=20, height=5)
+            next_button.pack()
 
     print_text()  # 텍스트 출력 함수 호출
 
+def prologue_scene_2(user_name):
+    prologue_text_2 = """
+    프롤로그 2 텍스트 화면
+    """
+
+    # Tkinter 윈도우 생성
+    prologue_window_2 = tk.Toplevel()
+    prologue_window_2.title("프롤로그 2")  # 윈도우 제목 설정
+    prologue_window_2.geometry("1280x720")  # 윈도우 크기 설정
+
+    text_widget_2 = tk.Text(prologue_window_2, height=1024, width=576)  # 텍스트 위젯 생성
+    text_widget_2.pack()
+
+    # 텍스트를 한 글자씩 출력하는 함수
+    def print_text_2(index=0):
+        if index < len(prologue_text_2):
+            text_widget_2.insert(tk.END, prologue_text_2[index])  # 텍스트 위젯에 글자 추가
+            index += 1
+            prologue_window_2.after(10, print_text_2, index)  # 10밀리초 후에 다음 글자 출력
+        else:
+            next_button_2 = tk.Button(prologue_window_2, text="다음", command=lambda: prologue_scene_3(user_name), width=20, height=5)
+            next_button_2.pack()
+
+    print_text_2()  # 텍스트 출력 함수 호출
+
+# 프롤로그 3 장면을 생성하는 함수
+def prologue_scene_3(user_name):
+    prologue_text_3 = """
+    프롤로그 3 텍스트 화면
+    """
+
+    # Tkinter 윈도우 생성
+    prologue_window_3 = tk.Toplevel()
+    prologue_window_3.title("프롤로그 3")  # 윈도우 제목 설정
+    prologue_window_3.geometry("1280x720")  # 윈도우 크기 설정
+
+    text_widget_3 = tk.Text(prologue_window_3, height=1024, width=576)  # 텍스트 위젯 생성
+    text_widget_3.pack()
+
+    # 텍스트를 한 글자씩 출력하는 함수
+    def print_text_3(index=0):
+        if index < len(prologue_text_3):
+            text_widget_3.insert(tk.END, prologue_text_3[index])  # 텍스트 위젯에 글자 추가
+            index += 1
+            prologue_window_3.after(10, print_text_3, index)  # 10밀리초 후에 다음 글자 출력
+        else:
+            next_button_3 = tk.Button(prologue_window_3, text="다음", command=lambda: prologue_scene_4(user_name), width=20, height=5)
+            next_button_3.pack()
+
+    print_text_3()  # 텍스트 출력 함수 호출
+
+# 프롤로그 4 장면을 생성하는 함수
+def prologue_scene_4(user_name):
+    prologue_text_4 = """
+    프롤로그 4 텍스트 화면
+    """
+
+    # Tkinter 윈도우 생성
+    prologue_window_4 = tk.Toplevel()
+    prologue_window_4.title("프롤로그 4")  # 윈도우 제목 설정
+    prologue_window_4.geometry("1280x720")  # 윈도우 크기 설정
+
+    text_widget_4 = tk.Text(prologue_window_4, height=1024, width=576)  # 텍스트 위젯 생성
+    text_widget_4.pack()
+
+    # 텍스트를 한 글자씩 출력하는 함수
+    def print_text_4(index=0):
+        if index < len(prologue_text_4):
+            text_widget_4.insert(tk.END, prologue_text_4[index])  # 텍스트 위젯에 글자 추가
+            index += 1
+            prologue_window_4.after(10, print_text_4, index)  # 10밀리초 후에 다음 글자 출력
+        else:
+            start_main_button = tk.Button(prologue_window_4, text="메인 게임 시작", command=lambda: [prologue_window_4.destroy(), main()], width=20, height=5)
+            start_main_button.pack()
+
+            # 텍스트 출력이 끝나면 버튼을 생성하도록 추가
+            text_widget_4.after(10, lambda: start_main_button.pack())  
+
+    print_text_4()  # 텍스트 출력 함수 호출
+
 def main():
-    print("메인 게임 함수입니다.")
+    # Tkinter 윈도우 생성
+    main_window = tk.Tk()
+    main_window.title("메인 화면")  # 윈도우 제목 설정
+    main_window.geometry("1280x720")  # 윈도우 크기 설정
+
+    # 세금 징수 버튼 생성
+    tax_button = tk.Button(main_window, text="세금 징수", command=collect_tax)
+    tax_button.pack()
+
+    # 군사력 개발 버튼 생성
+    military_button = tk.Button(main_window, text="군사력 개발", command=develop_military)
+    military_button.pack()
+
+    # 연구개발 버튼 생성
+    research_button = tk.Button(main_window, text="연구개발", command=conduct_research)
+    research_button.pack()
+
+    # 시설 개발 버튼 생성
+    facility_button = tk.Button(main_window, text="시설 개발", command=develop_facility)
+    facility_button.pack()
+
+    # 전투 준비 버튼 생성
+    battle_button = tk.Button(main_window, text="전투 준비", command=prepare_for_battle)
+    battle_button.pack()
+
+    main_window.mainloop()  # Tkinter 이벤트 루프 시작
+
+# 각 기능에 대한 함수 정의
+def collect_tax():
+    print("세금을 징수합니다.")
+
+def develop_military():
+    print("군사력을 개발합니다.")
+
+def conduct_research():
+    print("연구를 진행합니다.")
+
+def develop_facility():
+    print("시설을 개발합니다.")
+
+def prepare_for_battle():
+    print("전투 준비를 합니다.")
+
 
 name_scene()  # 이름 입력 화면 표시
