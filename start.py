@@ -94,9 +94,11 @@ def main():
     military_button = tk.Button(main_window, text="군사력 개발", command=develop_military)
     military_button.pack()
 
+
     # 연구개발 버튼 생성
     research_button = tk.Button(main_window, text="연구개발", command=conduct_research)
     research_button.pack()
+
 
     # 시설 개발 버튼 생성
     facility_button = tk.Button(main_window, text="시설 개발", command=develop_facility)
