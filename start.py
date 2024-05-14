@@ -33,7 +33,7 @@ def name_scene():
 
 # 프롤로그 장면을 생성하고 업데이트하는 함수
 def prologue_scene(user_name):
-    global prologue_window, prologue_index  # prologue_window와 prologue_index를 전역 변수로 사용하겠다고 선언
+    global prologue_window, prologue_index
 
     prologue_texts = [
         f"""
@@ -50,34 +50,32 @@ def prologue_scene(user_name):
         """
     ]
 
-    if prologue_window is None:
-        # Tkinter 윈도우 생성
-        prologue_window = tk.Toplevel()  # 이전 윈도우에서 새로운 프롤로그 창으로 변경
-        prologue_window.title("프롤로그")  # 윈도우 제목 설정
-        prologue_window.geometry("1280x720")  # 윈도우 크기 설정
+    button_texts = ['모두 전진', '동지들!', '알겠네!', '앞으로']
 
-        # 텍스트 위젯 생성
+    def update_text():
+        global prologue_index
+
+        if prologue_index < len(prologue_texts):
+            text_widget.delete("1.0", tk.END)
+            text_widget.insert(tk.END, prologue_texts[prologue_index])
+            next_button.config(text=button_texts[prologue_index])  # 버튼 텍스트 변경
+            prologue_index += 1
+        else:
+            prologue_index = 0
+            prologue_window.destroy()
+
+    if prologue_window is None:
+        prologue_window = tk.Toplevel()
+        prologue_window.title("프롤로그")
+        prologue_window.geometry("1280x720")
+
         text_widget = tk.Text(prologue_window, height=50, width=100)
         text_widget.pack()
 
-        # 텍스트 업데이트 함수
-        def update_text():
-            global prologue_index  # prologue_index를 전역 변수로 사용하겠다고 선언
-
-            if prologue_index < len(prologue_texts):
-                text_widget.delete("1.0", tk.END)  # 텍스트 모두 삭제
-                text_widget.insert(tk.END, prologue_texts[prologue_index])  # 새로운 텍스트 삽입
-                prologue_index += 1
-            else:
-                prologue_index = 0  # 인덱스 초기화
-                prologue_window.destroy()  # 프롤로그 창 닫기
-                main()  # 메인 화면 호출
-
-        update_text()  # 초기 텍스트 업데이트
-
-        # 다음 버튼 생성
         next_button = tk.Button(prologue_window, text="다음", command=update_text, width=20, height=5)
-        next_button.pack(side=tk.BOTTOM)  # 버튼을 윈도우의 아래쪽에 배치
+        next_button.pack(side=tk.BOTTOM)
+
+        update_text()
 
 # 메인 함수
 def main():
