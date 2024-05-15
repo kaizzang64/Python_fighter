@@ -1,8 +1,20 @@
+import time
 import tkinter as tk
 
 name_window = None  # 전역 변수로 name_window 선언
 prologue_window = None  # 전역 변수로 prologue_window 선언
 prologue_index = 0  # 전역 변수로 prologue_index 선언
+
+
+funds_label = None
+
+
+funds = 10000
+population = 10000
+economy = 100
+research = 0
+military = 100
+region = 200
 
 # 이름 입력 화면을 생성하는 함수
 def name_scene():
@@ -101,28 +113,49 @@ def prologue_scene(user_name):
         결코 투쟁을 멈추지 않을 것 입니다.
         """,
         f"""
-        100년전 미국이 주장하던 고립주의가 미국에 다시 등장했다.
-        고립주의 정치인이 2032년 미국 대통령 선거로 당선되어
-        미국은 다시 한번 고립주의를 표방하는 나라로 변화한다.
+        러시아를 비롯한 공산주의 세력이 NATO를 무찌르고 승리하면서 
+        세계에 신질서가 내려왔습니다. 유니언 잭과 성조기가
+        있던 자리에는 오성홍기와 낫과 망치가 다시한번 
+        휘날리고 있습니다. 한반도의 어두운 밤하늘에 희미한 
+        빛이 깜빡이고 있습니다. 푸틴 서기장은 2차 세계대전 이후 80년만에
+        찾아온 승리를 축하하고 있으며, 북한은 신 질서에 힘입어
+        머지않아 한반도를 붉게 물들일 날을 꿈꾸고 있습니다.
 
-        2033년 2차 한국전쟁이 발발했다.
-        철원 전투는 북한의 압승으로 끝났고 
-        대한민국 국군의 명령 체계는 그대로 무너져내렸다. 
-        이에 한국군은 혼란에 빠졌고 수 갈래로 찢어진 흩어진 다음, 
-        그대로 낙동강 방어선과 대구 근방까지 밀려나버린다. 
-        후퇴하는 과정에서 민경록 대통령은 포로로 잡혔고, 
-        {user_name}이 임시 비상 행정부 ㅜ장을 잡았다. 
-        아르한겔스크를 수도로 한 새로운 정부가 들어섰지만, 
-        이 쿠데타는 소련을 내전 상황으로 몰아넣었다. 
-        결국 레닌의 사망 18주년인 1942년 1월 21일, 
-        그렇게 소련은 지도에서 사라지고 아르한겔스크의 신소련 정부는 혼란에 빠졌다.
+        낙동강 방어선의 부대는 모두 연락이 끊겼으며, 마지막 남은 민주주의의
+        잔해들은 자신의 운명을 실현할 준비를 하고 있습니다.
+        
         """,
         f"""
-        프롤로그 4 텍스트 화면 {user_name}
+        민경록 대통령의 편지
+
+
+        {user_name}님에게,
+        
+        패배는 언제나 어렵습니다. 우리는 친절한 말로 패배의 쓰라림을 달래고
+        공개적인 겸손을 보여 주려고 노력할 수 있지만, 그 쓰라림은 결코 사라지지 않습니다.
+        그것은 우리 각자가 무덤까지 가지고 갈 상처입니다.        
+        그런 의미에서 저는 당신이 비상 행정부 수장이 되는것이 상당히 다행이라고 생각합니다.
+        사령관님처럼 정직하고 애국심이 강하며 헌신적인 군인으로서
+        저는 여생을 '어떻게 했더라면', '어떻게 다르게 행동할 수 있었을까'를
+        고민하며 보낼 것입니다. 제가 대통령에 당선된것이 우연인지, 역사의 긴 궤적에서
+        벗어난 일탈인지, 아니면 완전히 다른 무언가인지 궁금해할 것입니다.       
+        이 질문에 대한 답은 결코 알 수 없지만, 그것은 당신과 국민들이 짊어져야 할 짐입니다.
+        {user_name}님, 제가 재임 기간에 해결하고자 했던 더 큰 문제들이 이제 사령관님에게 떠넘겨졌습니다.   
+        현재 한반도에 남아있는 우리나라국민들은 더이상 저희가 보호해줄수 없는 상태입니다.
+        1차 한국전쟁 이전의 삶에 대한 기억이 있는 사람들이 거의 없으며, 
+        우리는 자유의 횃불이 잠시라도 이득이 된다면 부주의하게도 꺼버릴 수 있는 
+        선동가와 급진주의자들이 점점 더 많아지는 나라에 살고 있습니다.
+        저는 가끔 밤마다 창밖을 바라보며 사령관님이 이끄는 새로운 세대가 
+        이러한 도전에 맞설 수 있을지 걱정합니다. 
+        하지만 여러분은 할 수 있다고 믿어 의심치 않습니다.
+        모든 측면을 살피고 신중한 접근 방식을 취함으로써, 저는 당신이 다시한번
+        자유 민주주의를 되찾아 올것이라 굳게 믿습니다.
+        이 나라를 자랑스럽게 만드십시오, 대통령님. 위대한 일을 마무리하십시오.
+        영원히 당신의 것입니다,
         """
     ]
 
-    button_texts = ['다음', '총원 최대 경계 상태로!', '알겠네!', '앞으로']
+    button_texts = ['다음', '총원 최대 경계 상태로!', '모든것이 무너진다', '편지는 정중하고 무뚝뚝하게 읽혔다.']
 
     def update_text():
         global prologue_index
@@ -135,6 +168,7 @@ def prologue_scene(user_name):
         else:
             prologue_index = 0
             prologue_window.destroy()
+            Lobby()
 
     if prologue_window is None:
         prologue_window = tk.Toplevel()
@@ -149,52 +183,296 @@ def prologue_scene(user_name):
 
         update_text()
 
-# 메인 함수
-def main():
+def update_funds_label():
+    global funds_label  # funds_label 변수를 전역 변수로 사용
+    funds_label.config(text=f"자금 : {funds}")
+
+def update_population_label():
+    global population_label
+    population_label.config(text=f"인구수 : {population}")
+
+def update_military_label():
+    global military_label
+    military_label.config(text=f"군사력 : {military}")
+
+def on_jeju_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+     # region이 2 이상인 경우에만 함수 실행
+    if region >= 1:
+        funds += population * 0.07
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_jeolla_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 3:
+        funds += population * 0.08
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_gyeongsang_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 6:
+        funds += population * 0.15
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_chungcheong_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 15:
+        funds += population * 0.20
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_gangwon_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 21:
+        funds += population * 0.25
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_gyeonggi_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 54:
+        funds += population * 0.45
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_hwanghae_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 49:
+        funds += population * 0.35
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_pyongan_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 31:
+        funds += population * 0.30
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)  # update_funds_label 함수 호출
+
+def on_wonsan_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 26:
+        funds += population * 0.25
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+def on_hamgyong_button_click():
+    global funds
+    global funds_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 44:
+        funds += population * 0.20
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+
+
+def conduct_research_gui():
     # Tkinter 윈도우 생성
-    main_window = tk.Toplevel()  # 이전 윈도우에서 메인 창으로 변경
-    main_window.title("메인 화면")  # 윈도우 제목 설정
-    main_window.geometry("1280x720")  # 윈도우 크기 설정
+    conduct_research_window = tk.Toplevel()
+    conduct_research_window.title("연구개발")
+    conduct_research_window.geometry("1280x720")
 
-    # 세금 징수 버튼 생성
-    tax_button = tk.Button(main_window, text="세금 징수", command=collect_tax)
-    tax_button.pack()
+    # 연구개발 창에 대한 내용을 표시하는 레이블
+    label = tk.Label(conduct_research_window, text="연구를 진행합니다.")
+    label.pack()
 
-    # 군사력 개발 버튼 생성
-    military_button = tk.Button(main_window, text="군사력 개발", command=develop_military)
-    military_button.pack()
+    # 뒤로가기 버튼 생성
+    back_button = tk.Button(conduct_research_window, text="뒤로가기", command=conduct_research_window.destroy)
+    back_button.pack()
+
+def develop_facility_gui():
+    # Tkinter 윈도우 생성
+    develop_facility_window = tk.Toplevel()
+    develop_facility_window.title("시설 개발")
+    develop_facility_window.geometry("1280x720")
+
+    # 시설 개발 창에 대한 내용을 표시하는 레이블
+    label = tk.Label(develop_facility_window, text="시설을 개발합니다.")
+    label.pack()
+
+    # 뒤로가기 버튼 생성
+    back_button = tk.Button(develop_facility_window, text="뒤로가기", command=develop_facility_window.destroy)
+    back_button.pack()
+
+def prepare_for_battle_gui():
+    # Tkinter 윈도우 생성
+    prepare_for_battle_window = tk.Toplevel()
+    prepare_for_battle_window.title("전투 준비")
+    prepare_for_battle_window.geometry("1280x720")
+
+    # 전투 준비 창에 대한 내용을 표시하는 레이블
+    label = tk.Label(prepare_for_battle_window, text="전투 준비를 합니다.")
+    label.pack()
+
+    # 뒤로가기 버튼 생성
+    back_button = tk.Button(prepare_for_battle_window, text="뒤로가기", command=prepare_for_battle_window.destroy)
+    back_button.pack()
 
 
-    # 연구개발 버튼 생성
-    research_button = tk.Button(main_window, text="연구개발", command=conduct_research)
-    research_button.pack()
 
 
-    # 시설 개발 버튼 생성
-    facility_button = tk.Button(main_window, text="시설 개발", command=develop_facility)
-    facility_button.pack()
+# 메인 함수
+def Lobby():
+    global funds_label  # funds_label 변수를 전역 변수로 사용
+    # Tkinter 윈도우 생성
+    Lobby_window = tk.Tk()
+    Lobby_window.title("메인 화면")
+    Lobby_window.geometry("1280x720")
 
-    # 전투 준비 버튼 생성
-    battle_button = tk.Button(main_window, text="전투 준비", command=prepare_for_battle)
-    battle_button.pack()
+    # 버튼 그룹박스 생성
+    button_group = tk.LabelFrame(Lobby_window, text="기능 버튼")
+    button_group.pack(fill="both", expand="yes", padx=10, pady=10)
 
-    main_window.mainloop()  # Tkinter 이벤트 루프 시작
+    # 초기에는 메인 버튼이 나타남
+    update_buttons(button_group, "main")
 
-# 각 기능에 대한 함수 정의
-def collect_tax():
-    print("세금을 징수합니다.")
+    # 그룹박스 생성
+    power_group = tk.LabelFrame(Lobby_window, text="국력")
+    power_group.pack(fill="both", expand="yes", padx=10, pady=10)
 
-def develop_military():
-    print("군사력을 개발합니다.")
+    # 자원 및 인구 그룹박스에 대한 레이블 생성
+    funds_label = tk.Label(power_group, text=f"자금 : {funds}")
+    funds_label.grid(row=0, column=0, padx=5, pady=5)
 
-def conduct_research():
-    print("연구를 진행합니다.")
+    population_label = tk.Label(power_group, text=f"인구수 : {population}")
+    population_label.grid(row=1, column=0, padx=5, pady=5)
 
-def develop_facility():
-    print("시설을 개발합니다.")
+    economy_label = tk.Label(power_group, text=f"경제력 : {economy}")
+    economy_label.grid(row=2, column=0, padx=5, pady=5)
 
-def prepare_for_battle():
-    print("전투 준비를 합니다.")
+    research_label = tk.Label(power_group, text=f"연구력 : {research}")
+    research_label.grid(row=3, column=0, padx=5, pady=5)
+
+    area_label = tk.Label(power_group, text=f"지역수 : {region}")
+    area_label.grid(row=4, column=0, padx=5, pady=5) 
+    military_label = tk.Label(power_group, text=f"군사력 : {military}")
+    military_label.grid(row=5, column=0, padx=5, pady=5)
+
+    combat_power_label = tk.Label(power_group, text=f"전투력 : {military * 0.1}")
+    combat_power_label.grid(row=6, column=0, padx=5, pady=5)
+
+    Lobby_window.mainloop()
+
+# 버튼 업데이트 함수
+def update_buttons(button_group, button_type):
+    # 기존 버튼들을 삭제
+    for widget in button_group.winfo_children():
+        widget.destroy()
+
+    # 메인 버튼일 경우
+    if button_type == "main":
+        # 각 버튼에 대한 기능 설정
+        tax_button = tk.Button(button_group, text="세금 징수", command=lambda: update_buttons(button_group, "tax"))
+        tax_button.pack(side="left", padx=5, pady=5)
+
+        military_button = tk.Button(button_group, text="군사력 개발", command=lambda: update_buttons(button_group, "military"))
+        military_button.pack(side="left", padx=5, pady=5)
+
+        research_button = tk.Button(button_group, text="연구개발", command=conduct_research_gui)
+        research_button.pack(side="left", padx=5, pady=5)
+
+        facility_button = tk.Button(button_group, text="시설 개발", command=develop_facility_gui)
+        facility_button.pack(side="left", padx=5, pady=5)
+
+        battle_button = tk.Button(button_group, text="전투 준비", command=prepare_for_battle_gui)
+        battle_button.pack(side="left", padx=5, pady=5)
+
+    # 세금 징수 버튼일 경우
+    elif button_type == "tax":
+        # 각 버튼에 대한 기능 설정
+        jeju_button = tk.Button(button_group, text="제주", command=on_jeju_button_click)
+        jeju_button.pack(side="left", padx=5, pady=5)
+
+        jeolla_button = tk.Button(button_group, text="전라", command=on_jeolla_button_click)
+        jeolla_button.pack(side="left", padx=5, pady=5)
+
+        gyeongsang_button = tk.Button(button_group, text="경상", command=on_gyeongsang_button_click)
+        gyeongsang_button.pack(side="left", padx=5, pady=5)
+
+        chungcheong_button = tk.Button(button_group, text="충청", command=on_chungcheong_button_click)
+        chungcheong_button.pack(side="left", padx=5, pady=5)
+
+        gangwon_button = tk.Button(button_group, text="강원", command=on_gangwon_button_click)
+        gangwon_button.pack(side="left", padx=5, pady=5)
+
+        gyeonggi_button = tk.Button(button_group, text="경기", command=on_gyeonggi_button_click)
+        gyeonggi_button.pack(side="left", padx=5, pady=5)
+
+        hwanghae_button = tk.Button(button_group, text="황해", command=on_hwanghae_button_click)
+        hwanghae_button.pack(side="left", padx=5, pady=5)
+
+        pyongan_button = tk.Button(button_group, text="평안", command=on_pyongan_button_click)
+        pyongan_button.pack(side="left", padx=5, pady=5)
+
+        wonsan_button = tk.Button(button_group, text="원산", command=on_wonsan_button_click)
+        wonsan_button.pack(side="left", padx=5, pady=5)
+
+        hamgyong_button = tk.Button(button_group, text="함경", command=on_hamgyong_button_click)
+        hamgyong_button.pack(side="left", padx=5, pady=5)
+
+    elif button_type == "military":
+        # 각 버튼에 대한 기능 설정
+        soldier_button = tk.Button(button_group, text="보병 생산", command=buy_soldier)
+        soldier_button.pack(side="left", padx=5, pady=5)
+
+        Rifle_button = tk.Button(button_group, text="소총 생산", command=buy_Rifle)
+        Rifle_button.pack(side="left", padx=5, pady=5)
+
+        RPG_button = tk.Button(button_group, text="대전차포 생산", command=buy_RPG)
+        RPG_button.pack(side="left", padx=5, pady=5)
+
+        Artillery_button = tk.Button(button_group, text="야포 생산", command=buy_Artillery)
+        Artillery_button.pack(side="left", padx=5, pady=5)
+
+        Tank_button = tk.Button(button_group, text="전차 생산", command=buy_tank)
+        Tank_button.pack(side="left", padx=5, pady=5)
+
+        Fighter_button = tk.Button(button_group, text="전투기 생산", command=buy_Fighter)
+        Fighter_button.pack(side="left", padx=5, pady=5)
+
+        # "돌아가기" 버튼 추가
+        back_button = tk.Button(button_group, text="돌아가기", command=lambda: update_buttons(button_group, "main"))
+        back_button.pack(side="left", padx=5, pady=5)
+
+
+
+
+
+
+
+
 
 
 name_scene()  # 이름 입력 화면 표시
