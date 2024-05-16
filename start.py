@@ -111,8 +111,7 @@ def prologue_scene(user_name):
         역사의 필연성은 폭군이나 빨갱이들에 의해 멈춰지지 않을것입니다.
         우린 죽음이 찾아오거나, 빨갱이의 총끝이 목끝까지 오더라도
         결코 투쟁을 멈추지 않을 것 입니다.
-        """,
-        f"""
+
         러시아를 비롯한 공산주의 세력이 NATO를 무찌르고 승리하면서 
         세계에 신질서가 내려왔습니다. 유니언 잭과 성조기가
         있던 자리에는 오성홍기와 낫과 망치가 다시한번 
@@ -123,7 +122,55 @@ def prologue_scene(user_name):
 
         낙동강 방어선의 부대는 모두 연락이 끊겼으며, 마지막 남은 민주주의의
         잔해들은 자신의 운명을 실현할 준비를 하고 있습니다.
+        """,
+        f"""
+        -------------------------------------------------------------
+        (중략)
+        -------------------------------------------------------------
+        2033년 8월 12일, 총성이 멈췄습니다. 2차 한국전쟁은 끝났고,
+        북한은 2년 동안의 진이 빠지는 전쟁 끝에 승전국이 되었습니다. 
+        전세계 전쟁사에 길이남을 치열한 공방전 끝에 
+        양측은 수백만명의 사상자를 내고 끝내 부산은 함락되었습니다.
+        오정훈 사령관이 이끄는 해병대가 필사적으로 저항해 제주도에 망명정부를
+        세웠지만. 제주도  심각한 경제적, 군사적 타격을 입었습니다.
         
+        "국민여러분"
+        
+        {user_name}의 힘있는 목소리가 제주도에 가득 모인 군중들을 울렸다. 
+        군인들, 피난민들, 기자들, 정부인사들. 모두 이곳에 있었고, 
+        모두가 환영받았다. 
+        \"우리 모두는 조선 민주주의 인민 공화국이라 불리는 
+        파괴적인 괴물 때문에 이 자리에 있습니다. 그 안에 있는 무수한 악마들은 
+        전세계를 충격에 빠뜨려 침묵에 잠기게 했습니다. 허나 더 이상은 안 됩니다! 
+        김정은의 비도덕적인 이데올로기가 더 이상 퍼져나가서도, 
+        더 많은 사람들을 죽여서도 안 됩니다!\" 
+        광란의 환호소리가 터져나왔다. 그 잠깐 동안 절망과 처절함은 어딘가로 사라졌다. 
+        \"여러분들 모두 들어보십시오. 여러분들의 증오를 잘 알고 있습니다. 
+        모두 그럴만 합니다. 그럴만 해요! 저희 대한민국 정부가 저지른 잘못으로 그들을 
+        바다속으로 쫓아버리고 싶겠죠. 하지만 부디, 들어주십시오. 
+        제가 말하는 것을 들어주십시오! 우리는 여기서 당장 이 증오의 고리를 끊어버려야 합니다!\" 
+        여전히 환호성은 강력했다. 하지만 방금 전보다는 약했다.
+        \"저는 대한민국을 압니다. 진정한 대한민국을. 북한놈들이 뿌리를 뽑아버리려 했던 
+        그런 대한민국을 말입니다.\"
+        {user_name}는 깊게 숨을 들이마셨다. 
+        "허나 대한민국은 결코 죽지 않았습니다! 민주 대한의 빛은 결코
+        없어질 수 없습니다! 전세계를 위해서는 더 나은 미래가 있을 겁니다! 
+        우리는 패배자와 승리자로, 여당과 야당으로 서지 않아야 합니다. 
+        우리는 형제지간, 자매지간, 그리고 동등한 관계로서 존재해야 합니다! 
+        그러니 부디, 대한민국을 위하여 간청합니다. 저희를 용서해주십시오. 
+        저희는 최선을 다했습니다만, 국민여러분들의 생명과 재산을 지키지 못했습니다!" 
+        그의 두 손은 주먹을 꽉 쥐었다. 그는 이빨을 더 세게 갈았다. 
+        사람들은 침묵 속에서 그를 재판했다. "국민여러분, 
+        우리를 용서해주십시오. 우리가 자그마한 동정조차 얻을 자격이 없다 하더라도, 
+        교양있는 자들은 자유를 위해 계속해서 싸울 것입니다." 
+        그의 목소리는 힘있게 깔렸고, 
+        점점 갈라지기 시작했다. 분위기는 어두워졌다.{user_name}는 천천히 무릎을 
+        꿇고 머리를 앞으로 숙였다. 수 초가 지났다. 아무도 말하지 않았다. 
+        그들은 {user_name}의 몸이 흔들리는 것을 알아챘다. 흔들리는 몸 사이로, 
+        두 방울의 눈물이 목조 연단에 떨어졌다. 그는 사람들이 이 숨 막힐 것 같은 
+        침묵을 계속하리라 생각했다. 하지만 한 사람이 박수를 치기 시작했고, 
+        10명이, 100명이, 1000명이 박수를 쳤다. 그가 자유를 위해 싸우기로 결심한 
+        자들을 올려다봤을 때, {user_name}의 얼굴은 떨리는 미소를 지었다.
         """,
         f"""
         민경록 대통령의 편지
@@ -155,7 +202,7 @@ def prologue_scene(user_name):
         """
     ]
 
-    button_texts = ['다음', '총원 최대 경계 상태로!', '모든것이 무너진다', '편지는 정중하고 무뚝뚝하게 읽혔다.']
+    button_texts = ['다음', '총원 최대 경계 상태로!', '감사합니다...', '편지는 정중하고 무뚝뚝하게 읽혔다.']
 
     def update_text():
         global prologue_index
@@ -178,7 +225,7 @@ def prologue_scene(user_name):
         text_widget = tk.Text(prologue_window, height=50, width=100)
         text_widget.pack()
 
-        next_button = tk.Button(prologue_window, text="다음", command=update_text, width=20, height=5)
+        next_button = tk.Button(prologue_window, text="다음", command=update_text, width=30, height=5)
         next_button.pack(side=tk.BOTTOM)
 
         update_text()
@@ -187,14 +234,31 @@ def update_funds_label():
     global funds_label  # funds_label 변수를 전역 변수로 사용
     funds_label.config(text=f"자금 : {funds}")
 
-def update_population_label():
-    global population_label
-    population_label.config(text=f"인구수 : {population}")
-
 def update_military_label():
     global military_label
     military_label.config(text=f"군사력 : {military}")
 
+def update_popualtion_label():
+    global population_label
+    population_label.config(text=f"인구 : {military}")
+
+def update_economy_label():
+    global economy_label
+    economy_label.config(text=f"경제력 : {economy}")
+
+def update_research_label():
+    global research_label_label
+    research_label.config(text=f"연구력 : {research}")
+
+def update_region_label():
+    global region_label
+    region_label.config(text=f"지역수 : {region}")
+
+def update_combat_power_label():
+    global combat_power_label
+    combat_power_label.config(text=f"전투력 : {military*0.1}")
+
+#세금 징수 창 버튼
 def on_jeju_button_click():
     global funds
     global funds_label  # funds_label 변수를 전역 변수로 선언
@@ -296,6 +360,18 @@ def on_hamgyong_button_click():
         update_funds_label()  # update_funds_label 함수 호출
     time.sleep(0.5)
 
+#군사력 개발 버튼
+def buy_soldier():
+    global funds
+    global military_label  # funds_label 변수를 전역 변수로 선언
+    global population
+    global region
+    if region >= 44:
+        funds += population * 0.20
+        update_funds_label()  # update_funds_label 함수 호출
+    time.sleep(0.5)
+
+
 
 
 def conduct_research_gui():
@@ -345,7 +421,7 @@ def prepare_for_battle_gui():
 
 # 메인 함수
 def Lobby():
-    global funds_label  # funds_label 변수를 전역 변수로 사용
+    global funds_label,military_label,population_label,research_label,population_label,economy_label,region_label,combat_power_label  # funds_label 변수를 전역 변수로 사용
     # Tkinter 윈도우 생성
     Lobby_window = tk.Tk()
     Lobby_window.title("메인 화면")
@@ -375,8 +451,8 @@ def Lobby():
     research_label = tk.Label(power_group, text=f"연구력 : {research}")
     research_label.grid(row=3, column=0, padx=5, pady=5)
 
-    area_label = tk.Label(power_group, text=f"지역수 : {region}")
-    area_label.grid(row=4, column=0, padx=5, pady=5) 
+    region_label = tk.Label(power_group, text=f"지역수 : {region}")
+    region_label.grid(row=4, column=0, padx=5, pady=5) 
     military_label = tk.Label(power_group, text=f"군사력 : {military}")
     military_label.grid(row=5, column=0, padx=5, pady=5)
 
