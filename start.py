@@ -9,11 +9,11 @@ prologue_index = 0  # 전역 변수로 prologue_index 선언
 funds_label = None
 
 
-funds = 10000
-population = 10000
-economy = 100
-research = 0
-military = 100
+funds = 100000000000
+population = 10000000000
+economy = 1000000000000
+research = 10000000000
+military = 1000000000000
 region = 200
 
 # 이름 입력 화면을 생성하는 함수
@@ -238,9 +238,9 @@ def update_military_label():
     global military_label
     military_label.config(text=f"군사력 : {military}")
 
-def update_popualtion_label():
+def update_population_label():
     global population_label
-    population_label.config(text=f"인구 : {military}")
+    population_label.config(text=f"인구 : {population}")
 
 def update_economy_label():
     global economy_label
@@ -364,58 +364,241 @@ def on_hamgyong_button_click():
 def buy_soldier():
     global funds
     global military_label  # funds_label 변수를 전역 변수로 선언
-    global population
-    global region
-    if region >= 44:
-        funds += population * 0.20
+    global military
+    global research
+    if funds>500 and research>=0:
+        military = military + 1
+        funds=funds-500
         update_funds_label()  # update_funds_label 함수 호출
-    time.sleep(0.5)
+        update_military_label()
+        update_combat_power_label()
 
+def buy_Rifle():
+    global funds
+    global military_label  # funds_label 변수를 전역 변수로 선언
+    global military
+    global research
+    if funds>2000 and research>=20:
+        military = military + 6
+        funds=funds-2000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_military_label()
+        update_combat_power_label()
 
+def buy_RPG():
+    global funds
+    global military_label  # funds_label 변수를 전역 변수로 선언
+    global military
+    global research
+    if funds>6000 and research>=175:
+        military = military + 25
+        funds=funds-6000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_military_label()
+        update_combat_power_label()
 
+def buy_Artillery():
+    global funds
+    global military_label  # funds_label 변수를 전역 변수로 선언
+    global military
+    global research
+    if funds>50000 and research>=2200:
+        military = military + 2200
+        funds=funds-50000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_military_label()
+        update_combat_power_label()
 
-def conduct_research_gui():
-    # Tkinter 윈도우 생성
-    conduct_research_window = tk.Toplevel()
-    conduct_research_window.title("연구개발")
-    conduct_research_window.geometry("1280x720")
+def buy_Artillery():
+    global funds
+    global military_label  # funds_label 변수를 전역 변수로 선언
+    global military
+    global research
+    if funds>50000 and research>=2200:
+        military = military + 250
+        funds=funds-50000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_military_label()
+        update_combat_power_label()
 
-    # 연구개발 창에 대한 내용을 표시하는 레이블
-    label = tk.Label(conduct_research_window, text="연구를 진행합니다.")
-    label.pack()
+def buy_Tank():
+    global funds
+    global military_label  # funds_label 변수를 전역 변수로 선언
+    global military
+    global research
+    if funds>500000 and research>=15000:
+        military = military + 2600
+        funds=funds-500000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_military_label()
+        update_combat_power_label()
 
-    # 뒤로가기 버튼 생성
-    back_button = tk.Button(conduct_research_window, text="뒤로가기", command=conduct_research_window.destroy)
-    back_button.pack()
+def buy_Fighter():
+    global funds
+    global military_label  # funds_label 변수를 전역 변수로 선언
+    global military
+    global research
+    if funds>8000000 and research>=30000:
+        military = military + 43000
+        funds=funds-8000000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_military_label()
+        update_combat_power_label()
 
-def develop_facility_gui():
-    # Tkinter 윈도우 생성
-    develop_facility_window = tk.Toplevel()
-    develop_facility_window.title("시설 개발")
-    develop_facility_window.geometry("1280x720")
+def research_1():
+    global funds
+    global research_label  # funds_label 변수를 전역 변수로 선언
+    global economy
+    global research
+    if funds>5000 and economy>=0:
+        research = research + 1
+        funds=funds-5000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_research_label()
 
-    # 시설 개발 창에 대한 내용을 표시하는 레이블
-    label = tk.Label(develop_facility_window, text="시설을 개발합니다.")
-    label.pack()
+def research_2():
+    global funds
+    global research_label  # funds_label 변수를 전역 변수로 선언
+    global economy
+    global research
+    if funds>30000 and economy>=40:
+        research = research + 6
+        funds=funds-30000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_research_label()
 
-    # 뒤로가기 버튼 생성
-    back_button = tk.Button(develop_facility_window, text="뒤로가기", command=develop_facility_window.destroy)
-    back_button.pack()
+def research_3():
+    global funds
+    global research_label  # funds_label 변수를 전역 변수로 선언
+    global economy
+    global research
+    if funds>90000 and economy>=300:
+        research = research + 20
+        funds=funds-90000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_research_label()
 
-def prepare_for_battle_gui():
-    # Tkinter 윈도우 생성
-    prepare_for_battle_window = tk.Toplevel()
-    prepare_for_battle_window.title("전투 준비")
-    prepare_for_battle_window.geometry("1280x720")
+def research_4():
+    global funds
+    global research_label  # funds_label 변수를 전역 변수로 선언
+    global economy
+    global research
+    if funds>500000 and economy>=7500:
+        research = research + 115
+        funds=funds-500000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_research_label()
 
-    # 전투 준비 창에 대한 내용을 표시하는 레이블
-    label = tk.Label(prepare_for_battle_window, text="전투 준비를 합니다.")
-    label.pack()
+def research_5():
+    global funds
+    global research_label  # funds_label 변수를 전역 변수로 선언
+    global economy
+    global research
+    if funds>5000000 and economy>=70000:
+        research = research + 1200
+        funds=funds-5000000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_research_label()
 
-    # 뒤로가기 버튼 생성
-    back_button = tk.Button(prepare_for_battle_window, text="뒤로가기", command=prepare_for_battle_window.destroy)
-    back_button.pack()
+def research_6():
+    global funds
+    global research_label  # funds_label 변수를 전역 변수로 선언
+    global economy
+    global research
+    if funds>80000000 and economy>=800000:
+        research = research + 19300
+        funds=funds-800000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_research_label()
 
+def facility_1():
+    global funds
+    global economy_label  # funds_label 변수를 전역 변수로 선언
+    global population_label
+    global economy
+    global region
+    global population
+    if funds>2500 and region>=0:
+        economy = economy + 1
+        funds=funds-2500
+        population=population+200
+        update_funds_label()  # update_funds_label 함수 호출
+        update_economy_label()
+        update_population_label()
+
+def facility_2():
+    global funds
+    global economy_label  # funds_label 변수를 전역 변수로 선언
+    global population_label
+    global economy
+    global region
+    global population
+    if funds>10000 and region>=3:
+        economy = economy + 5
+        funds=funds-10000
+        population=population+900
+        update_funds_label()  # update_funds_label 함수 호출
+        update_economy_label()
+        update_population_label()
+
+def facility_3():
+    global funds
+    global economy_label  # funds_label 변수를 전역 변수로 선언
+    global population_label
+    global economy
+    global region
+    global population
+    if funds>50000 and region>=9:
+        economy = economy + 27
+        funds=funds-50000
+        population=population+4600
+        update_funds_label()  # update_funds_label 함수 호출
+        update_economy_label()
+        update_population_label()
+
+def facility_4():
+    global funds
+    global economy_label  # funds_label 변수를 전역 변수로 선언
+    global population_label
+    global economy
+    global region
+    global population
+    if funds>300000 and region>=15:
+        economy = economy + 165
+        funds=funds-300000
+        population=population+28000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_economy_label()
+        update_population_label()
+
+def facility_5():
+    global funds
+    global economy_label  # funds_label 변수를 전역 변수로 선언
+    global population_label
+    global economy
+    global region
+    global population
+    if funds>2000000 and region>=24:
+        economy = economy + 1100
+        funds=funds-2000000
+        population=population+190000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_economy_label()
+        update_population_label()
+
+def facility_6():
+    global funds
+    global economy_label  # funds_label 변수를 전역 변수로 선언
+    global economy
+    global region
+    global population
+    if funds>30000000 and region>=39:
+        economy = economy + 17000
+        funds=funds-30000000
+        population=population+2900000
+        update_funds_label()  # update_funds_label 함수 호출
+        update_economy_label()
+        update_population_label()
 
 
 
@@ -476,13 +659,13 @@ def update_buttons(button_group, button_type):
         military_button = tk.Button(button_group, text="군사력 개발", command=lambda: update_buttons(button_group, "military"))
         military_button.pack(side="left", padx=5, pady=5)
 
-        research_button = tk.Button(button_group, text="연구개발", command=conduct_research_gui)
+        research_button = tk.Button(button_group, text="연구개발", command=lambda: update_buttons(button_group, "research"))
         research_button.pack(side="left", padx=5, pady=5)
 
-        facility_button = tk.Button(button_group, text="시설 개발", command=develop_facility_gui)
+        facility_button = tk.Button(button_group, text="시설 개발", command=lambda: update_buttons(button_group, "facility"))
         facility_button.pack(side="left", padx=5, pady=5)
 
-        battle_button = tk.Button(button_group, text="전투 준비", command=prepare_for_battle_gui)
+        battle_button = tk.Button(button_group, text="전투 준비", command=lambda: update_buttons(button_group, "battle"))
         battle_button.pack(side="left", padx=5, pady=5)
 
     # 세금 징수 버튼일 경우
@@ -518,6 +701,9 @@ def update_buttons(button_group, button_type):
         hamgyong_button = tk.Button(button_group, text="함경", command=on_hamgyong_button_click)
         hamgyong_button.pack(side="left", padx=5, pady=5)
 
+        back_button = tk.Button(button_group, text="돌아가기", command=lambda: update_buttons(button_group, "main"))
+        back_button.pack(side="left", padx=5, pady=5)
+
     elif button_type == "military":
         # 각 버튼에 대한 기능 설정
         soldier_button = tk.Button(button_group, text="보병 생산", command=buy_soldier)
@@ -532,11 +718,57 @@ def update_buttons(button_group, button_type):
         Artillery_button = tk.Button(button_group, text="야포 생산", command=buy_Artillery)
         Artillery_button.pack(side="left", padx=5, pady=5)
 
-        Tank_button = tk.Button(button_group, text="전차 생산", command=buy_tank)
+        Tank_button = tk.Button(button_group, text="전차 생산", command=buy_Tank)
         Tank_button.pack(side="left", padx=5, pady=5)
 
         Fighter_button = tk.Button(button_group, text="전투기 생산", command=buy_Fighter)
         Fighter_button.pack(side="left", padx=5, pady=5)
+
+        back_button = tk.Button(button_group, text="돌아가기", command=lambda: update_buttons(button_group, "main"))
+        back_button.pack(side="left", padx=5, pady=5)
+
+    elif button_type == "research":
+        # 각 버튼에 대한 기능 설정
+        research_1_button = tk.Button(button_group, text="기초 연구", command=research_1)
+        research_1_button.pack(side="left", padx=5, pady=5)
+
+        research_2_button = tk.Button(button_group, text="초급 연구", command=research_2)
+        research_2_button.pack(side="left", padx=5, pady=5)
+
+        research_3_button = tk.Button(button_group, text="중급 연구", command=research_3)
+        research_3_button.pack(side="left", padx=5, pady=5)
+
+        research_4_button = tk.Button(button_group, text="중고급 연구", command=research_4)
+        research_4_button.pack(side="left", padx=5, pady=5)
+
+        research_5_button = tk.Button(button_group, text="고급 연구", command=research_5)
+        research_5_button.pack(side="left", padx=5, pady=5)
+
+        research_6_button = tk.Button(button_group, text="최고급 연구", command=research_6)
+        research_6_button.pack(side="left", padx=5, pady=5)
+
+        back_button = tk.Button(button_group, text="돌아가기", command=lambda: update_buttons(button_group, "main"))
+        back_button.pack(side="left", padx=5, pady=5)
+
+    elif button_type == "facility":
+        # 각 버튼에 대한 기능 설정
+        facility_1_button = tk.Button(button_group, text="주거시설 개발", command=facility_1)
+        facility_1_button.pack(side="left", padx=5, pady=5)
+
+        facility_2_button = tk.Button(button_group, text="상업시설 개발", command=facility_2)
+        facility_2_button.pack(side="left", padx=5, pady=5)
+
+        facility_3_button = tk.Button(button_group, text="여가시설 개발", command=facility_3)
+        facility_3_button.pack(side="left", padx=5, pady=5)
+
+        facility_4_button = tk.Button(button_group, text="교통시설 개발", command=facility_4)
+        facility_4_button.pack(side="left", padx=5, pady=5)
+
+        facility_5_button = tk.Button(button_group, text="공업시설 개발", command=facility_5)
+        facility_5_button.pack(side="left", padx=5, pady=5)
+
+        facility_6_button = tk.Button(button_group, text="신도시 개발", command=facility_6)
+        facility_6_button.pack(side="left", padx=5, pady=5)
 
         # "돌아가기" 버튼 추가
         back_button = tk.Button(button_group, text="돌아가기", command=lambda: update_buttons(button_group, "main"))
